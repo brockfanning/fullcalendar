@@ -43,7 +43,9 @@ var defaults = {
 	columnFormat: {
 		month: 'ddd', // like "Sat"
 		week: generateWeekColumnFormat,
-		day: 'dddd' // like "Saturday"
+		day: 'dddd', // like "Saturday"
+		listMonth: 'dddd, MMMM D',
+		listWeek: 'dddd, MMMM D'
 	},
 	timeFormat: { // for event elements
 		'default': generateShortTimeFormat
@@ -65,7 +67,9 @@ var defaults = {
 		today: 'today',
 		month: 'month',
 		week: 'week',
-		day: 'day'
+		day: 'day',
+		listWeek: 'list',
+		listMonth: 'list'
 	},
 
 	buttonIcons: {

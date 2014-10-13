@@ -42,6 +42,9 @@
         "src/agenda/AgendaView.js",
         "src/agenda/AgendaWeekView.js",
         "src/agenda/AgendaDayView.js",
+        "src/list/ListView.js",
+        "src/list/ListMonthView.js",
+        "src/list/ListWeekView.js",
         "src/outro.js"
       ],
       "styles": [
