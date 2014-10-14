@@ -89,25 +89,28 @@ ListView.prototype = createObject(View.prototype); // define the super-class
 	},
 
 	setHeight: function(height, isAuto) {
-		//only seems to happen at resize
 
-		var diff = this.el.outerHeight() - this.scrollerEl.height();
+		if (!isAuto) {
+			var diff = this.el.outerHeight() - this.scrollerEl.height();
 
-		this.scrollerEl.height(height - diff);
+			this.scrollerEl.height(height - diff);
 
-		var contentHeight = 0;
-		this.scrollerEl.children().each(function(index, child) {
-			contentHeight += $(child).outerHeight();
-		});
+			var contentHeight = 0;
+			this.scrollerEl.children().each(function(index, child) {
+				contentHeight += $(child).outerHeight();
+			});
 
 
-		if (height - diff > contentHeight) {
-			this.scrollerEl.css('overflow-y', 'hidden');
+			if (height - diff > contentHeight) {
+				this.scrollerEl.css('overflow-y', 'hidden');
+			}
+			else {
+				this.scrollerEl.css('overflow-y', 'scroll');
+			}
 		}
 		else {
-			this.scrollerEl.css('overflow-y', 'scroll');
+			this.scrollerEl.css('overflow-y', 'auto');
 		}
-
 	},
 
 
